@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <style name="buttonStyle">
+
+        <item name="colorOnPrimary">@color/accent_color</item>
+        <item name="colorOnSecondary">@color/accent_color</item>
+        <item name="colorPrimaryVariant">@color/accent_color</item>
+        <item name="colorPrimary">@color/accent_color</item>
+
+    </style>
+
+    <style name="mediumRegularText" >
+        <item name="android:fontFamily"> @font/cocon_next_arabic</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="smallRegularText" >
+        <item name="android:fontFamily"> @font/cocon_next_arabic</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="TextViewStyled_Titles" parent="@android:style/Widget.TextView">
+    <item name="android:layout_marginStart">20dp</item>
+    <item name="android:fontFamily">@font/cocon_next_arabic</item>
+    <item name="android:layout_marginTop">8dp</item>
+    <item name="android:layout_marginBottom">8dp</item>
+    <item name="android:textColor">#000</item>
+    <item name="android:textSize">18sp</item>
+    <item name="android:textStyle">bold</item>
+</style>
+
+</resources>

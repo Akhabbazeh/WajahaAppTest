@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    android:background="@color/backgroundColor"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/spacing_xxx_large"
+        android:id="@+id/constraintLogin"
+        >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/shImgLoginHeader"
+            app:layout_constraintEnd_toEndOf="@id/shImgLoginHeader"
+            app:layout_constraintTop_toTopOf="@id/shImgLoginHeader"
+            app:layout_constraintBottom_toBottomOf="@id/shImgLoginHeader"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shImgLoginHeader"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:tint="@color/primary_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/guideLoginQuarter"
+            />
+
+
+        <ImageView
+            android:id="@+id/imgLoginLogo"
+            android:layout_width="250dp"
+            android:layout_height="175dp"
+            app:layout_constraintStart_toStartOf="@id/shImgLoginHeader"
+            app:layout_constraintEnd_toEndOf="@id/shImgLoginHeader"
+            app:layout_constraintTop_toTopOf="@id/shImgLoginHeader"
+            app:layout_constraintBottom_toTopOf="@+id/tilLoginUserName"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_marginBottom="@dimen/spacing_xlarge"
+            android:src="@drawable/ic_logo_app"
+            app:tint="@color/white"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLoginQuarter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLoginUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxCornerRadiusBottomEnd="@dimen/spacing_large"
+            app:boxCornerRadiusBottomStart="@dimen/spacing_large"
+            app:boxCornerRadiusTopEnd="@dimen/spacing_large"
+            app:boxCornerRadiusTopStart="@dimen/spacing_large"
+            app:layout_constraintTop_toBottomOf="@+id/imgLoginLogo"
+            app:layout_constraintBottom_toTopOf="@+id/tilLoginPassword"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginEnd="@dimen/spacing_large"
+            app:startIconDrawable="@drawable/ic_profile"
+            app:startIconTint="@color/primary_color"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtLoginUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/smallRegularText"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/dark_gray"
+                android:hint="@string/user_name"
+                android:inputType="text"
+                android:imeActionLabel="@string/login"
+                android:imeOptions="actionNext"
+                android:textAlignment="viewStart"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxCornerRadiusBottomEnd="@dimen/spacing_large"
+            app:boxCornerRadiusBottomStart="@dimen/spacing_large"
+            app:boxCornerRadiusTopEnd="@dimen/spacing_large"
+            app:boxCornerRadiusTopStart="@dimen/spacing_large"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginEnd="@dimen/spacing_large"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toBottomOf="@+id/tilLoginUserName"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+            app:startIconDrawable="@drawable/ic_password"
+            app:startIconTint="@color/primary_color"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/dark_gray"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/smallRegularText"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/dark_gray"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:imeActionLabel="@string/login"
+                android:imeOptions="actionGo"
+                android:textAlignment="viewStart"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            app:layout_constraintTop_toBottomOf="@+id/tilLoginPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/login"
+            style="@style/mediumRegularText"
+            android:background="@drawable/shape_rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/buttonStyle"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginBottom="@dimen/spacing_xlarge"
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="password">كلمة السر</string>
+    <string name="user_name">اسم المستخدم</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="empty_user_name_message">الرجاء ادخال اسم المستخدم</string>
+    <string name="empty_password_message">الرجاء ادخال كلمة المرور</string>
+    <string name="login_error">حدث خطأ اثناء تسجيل الدخول</string>
+
+
+    <string name="nav_home">الصفحة الرئيسية</string>
+    <string name="nav_memu">التصنيفات</string>
+    <string name="nav_offcer">العروض</string>
+    <string name="products">المنتجات</string>
+    <string name="nav_cart_shooping">سلة الشراء</string>
+
+    <string name="TheBestSeller">الأكثر مبيعا</string>
+    <string name="New">جديد</string>
+    <string name="theBestWanted">الأكثر طلبا</string>
+    <string name="Show_more">إظهار المزيد</string>
+
+    <string name="title_toolbar"> عنوان الصفحة الرئيسية </string>
+
+
+</resources>
