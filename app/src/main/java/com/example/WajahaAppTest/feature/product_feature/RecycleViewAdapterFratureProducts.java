@@ -1,10 +1,12 @@
 package com.example.WajahaAppTest.feature.product_feature;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,40 +16,42 @@ import com.example.WajahaAppTest.R;
 
 import java.util.List;
 
-public class RecycleViewAdapterProducts extends  RecyclerView.Adapter<RecycleViewAdapterProducts.ProductsViewHolder>{
+public class RecycleViewAdapterFratureProducts extends  RecyclerView.Adapter<RecycleViewAdapterFratureProducts.FeatureViewHolder>{
 
     private List<Products> products_datA;
     private Context context;
+    private int item_re_num=0;
 
     public List<Products> getProducts_datA() {
         return products_datA;
     }
 
-    public RecycleViewAdapterProducts(Context context,List<Products> products_datA) {
+    public RecycleViewAdapterFratureProducts(Context context,List<Products> products_datA) {
 
         this.products_datA = products_datA;
         this.context = context;
     }
 
-    public void setProducts_datA(List<Products> products_datA) {
+    public void setFeatureProducts_datA(List<Products> products_datA) {
         this.products_datA = products_datA;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public RecycleViewAdapterProducts.ProductsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecycleViewAdapterFratureProducts.FeatureViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.new_card_view,null,false);
-        ProductsViewHolder viewHolder = new ProductsViewHolder(v);
+        FeatureViewHolder viewHolder = new FeatureViewHolder(v);
         return viewHolder;
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecycleViewAdapterProducts.ProductsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FeatureViewHolder holder, int position) {
 
-
+        if(products_datA.get(position).getIsFeatured()==true){
+        item_re_num=item_re_num+1;
         holder.name_product.setText(products_datA.get(position).getName());
         holder.text_price.setText(products_datA.get(position).getPrice()+" sp");
         holder.dateOfPublication.setText(products_datA.get(position).getDateOfPublication());
@@ -61,19 +65,18 @@ public class RecycleViewAdapterProducts extends  RecyclerView.Adapter<RecycleVie
 
             }
         });
-
-
-
+        }
     }
+
 
     @Override
     public int getItemCount() {
-        return products_datA.size();
+        return item_re_num;
     }
 
 
 
-    class ProductsViewHolder extends RecyclerView.ViewHolder{
+    class FeatureViewHolder extends RecyclerView.ViewHolder{
 
         TextView name_product;
         TextView text_price;
@@ -82,7 +85,7 @@ public class RecycleViewAdapterProducts extends  RecyclerView.Adapter<RecycleVie
         ConstraintLayout constraintLayoutProduct;
 
 
-        public ProductsViewHolder(@NonNull View itemView) {
+        public FeatureViewHolder(@NonNull View itemView) {
             super(itemView);
             name_product=itemView.findViewById(R.id.name_product);
             text_price=itemView.findViewById(R.id.text_price);

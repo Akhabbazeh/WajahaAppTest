@@ -13,8 +13,13 @@ public class ProductsViewModel extends ViewModel {
     public void getProductsModel(){
         RequestBuilder.getINSTANCE().getProducts().enqueue(new Callback<List<Products>>() {
             @Override
-            public void onResponse(Call<List<Products>> call, Response<List<Products>> response) {
-                mutableLiveDataProducts.setValue(response.body());
+            public void onResponse(Call<List<Products>> call, Response<List<Products>> response)
+            {
+                if(response.isSuccessful())
+                {
+                    mutableLiveDataProducts.setValue(response.body());
+                }
+
             }
 
             @Override

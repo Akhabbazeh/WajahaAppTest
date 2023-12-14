@@ -11,8 +11,8 @@
 
     <string name="nav_home">الصفحة الرئيسية</string>
     <string name="nav_memu">التصنيفات</string>
-    <string name="nav_offcer">العروض</string>
-    <string name="products">المنتجات</string>
+    <string name="Featured_Products">Featured Products</string>
+    <string name="products">products</string>
     <string name="nav_cart_shooping">سلة الشراء</string>
 
     <string name="TheBestSeller">الأكثر مبيعا</string>

@@ -1,150 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/drawer_layout"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+
     >
 
-    <LinearLayout
 
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layoutDirection="rtl"
+
             >
 
-            <com.google.android.material.appbar.AppBarLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    style="@style/TextViewStyled_Titles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/products"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="@dimen/spacing_middle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProduct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                >
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar2"
-                    android:fitsSystemWindows="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="?android:attr/actionBarSize"
-                    android:background="@drawable/top_background"
+                />
 
-                    >
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/title_toolbar"
-                            android:layout_width="wrap_content"
-                            android:text="@string/title_toolbar"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="@dimen/spacing_x_medium"
-                            android:layout_marginTop="@dimen/spacing_large"
-                            android:layout_marginEnd="@dimen/spacing_large"
-                            android:layout_marginBottom="@dimen/spacing_large"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            android:visibility="gone"/>
-
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraint_Layout_search_toolbar"
-                            android:layout_width="260dp"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="@dimen/spacing_x_medium"
-                            android:layout_marginTop="@dimen/spacing_large"
-                            android:layout_marginEnd="@dimen/spacing_large"
-                            android:layout_marginBottom="@dimen/spacing_large"
-                            android:background="@drawable/background_search"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            >
-
-
-                            <ImageView
-                                android:id="@+id/imageView2"
-                                android:layout_width="50dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginEnd="0dp"
-                                android:scaleType="centerCrop"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/search" />
-
-                            <TextView
-                                android:id="@+id/textView5"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="24dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:layout_weight="1"
-                                android:text="ابحث عن المنتج"
-                                android:fontFamily="@font/cocon_next_arabic"
-                                android:textColor="@color/primary_color"
-                                android:textSize="15sp"
-                                android:textStyle="bold"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                        <ImageView
-                            android:id="@+id/button_open_cart"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="24dp"
-                            app:layout_constraintEnd_toStartOf="@+id/button_open_drawable2"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/shopping_cart_black"
-                            app:tint="@color/white" />
-
-                        <ImageView
-                            android:id="@+id/button_open_drawable2"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_gravity="start"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="24dp"
-                            android:src="@drawable/menu_bar"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.appcompat.widget.Toolbar>
-
-            </com.google.android.material.appbar.AppBarLayout>
-
-
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigationView"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_gravity="bottom"
-                app:itemIconSize="25dp"
-                app:menu="@menu/activity_main_drawer"
-                app:labelVisibilityMode="labeled"
-                >
-            </com.google.android.material.bottomnavigation.BottomNavigationView>
+                android:layout_height="wrap_content">
 
-            <include layout="@layout/container_main" />
+                <TextView
+                    style="@style/TextViewStyled_Titles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Feature_Product"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="@dimen/spacing_middle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
-</androidx.drawerlayout.widget.DrawerLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFeatureProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
