@@ -2,6 +2,8 @@ package com.example.WajahaAppTest.feature.product_feature;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class Products {
 @SerializedName("name")
 private String name;
@@ -12,10 +14,21 @@ private String dateOfPublication;
     @SerializedName("description")
 private String description;
     @SerializedName("isFeatured")
-private boolean isFeatured;
+    private boolean isFeatured;
 
     @SerializedName("primaryImage")
     private PrimaryImage Primary_Image;
+
+    @SerializedName("images")
+    private ArrayList<Images> images;
+
+    public ArrayList<Images> getImages() {
+        return images;
+    }
+
+    public void setImages(ArrayList<Images> images) {
+        this.images = images;
+    }
 
     public PrimaryImage getPrimary_Image() {
         return Primary_Image;
@@ -59,6 +72,7 @@ private boolean isFeatured;
     }
 
     public boolean getIsFeatured() {
+
         return isFeatured;
     }
 
@@ -78,4 +92,29 @@ private boolean isFeatured;
             LinkPrimaryImage = linkPrimaryImage;
         }
     }
-}
+
+    public class Images {
+
+        @SerializedName("id")
+        private String id;
+
+        @SerializedName("url")
+        private String url;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+    }
+    }

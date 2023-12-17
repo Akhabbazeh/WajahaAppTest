@@ -1,10 +1,15 @@
 package com.example.WajahaAppTest.feature.product_feature;
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +52,6 @@ public class RecycleViewAdapterProducts extends  RecyclerView.Adapter<RecycleVie
     @Override
     public void onBindViewHolder(@NonNull RecycleViewAdapterProducts.ProductsViewHolder holder, int position) {
 
-
         holder.name_product.setText(products_datA.get(position).getName());
         holder.text_price.setText(products_datA.get(position).getPrice()+" sp");
         holder.dateOfPublication.setText(products_datA.get(position).getDateOfPublication());
@@ -58,6 +62,9 @@ public class RecycleViewAdapterProducts extends  RecyclerView.Adapter<RecycleVie
         holder.constraintLayoutProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), AboutProductActivity.class);
+                intent.putExtra("product_num",position);
+                view.getContext().startActivity(intent);
 
             }
         });

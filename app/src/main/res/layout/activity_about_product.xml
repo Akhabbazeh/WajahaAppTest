@@ -5,19 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="rtl"
     tools:context=".feature.product_feature.AboutProductActivity">
 
     <ScrollView
         android:id="@+id/scrollView22"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
 
         <LinearLayout
@@ -41,70 +40,23 @@
                 android:layout_marginTop="5dp"
                 tools:layout_editor_absoluteY="281dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="110dp"
-                    android:layout_height="38dp"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView7"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView7">
-
-                    <TextView
-                        android:id="@+id/textView88"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:text="10%"
-                        android:fontFamily="@font/aljazeera"
-                        app:layout_constraintBottom_toBottomOf="@+id/cart_custom_price"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/cart_custom_price" />
-
-                    <TextView
-                        android:id="@+id/cart_custom_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="حسم"
-                        android:fontFamily="@font/aljazeera"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-                        app:layout_constraintEnd_toStartOf="@+id/textView88"
-                        app:layout_constraintStart_toEndOf="@+id/imageView3"
-                        app:layout_constraintTop_toTopOf="@+id/imageView3"
-                        app:layout_constraintVertical_bias="0.666" />
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/tag_offers"
-                        app:tint="@color/red" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
                 <TextView
                     android:id="@+id/textView7"
                     style="@style/TextViewStyled_Titles"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gift"
+                    android:text="product"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
+                android:id="@+id/descripition_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:gravity="end"
                 android:paddingRight="20dp"
+                android:layout_marginStart="20dp"
                 android:text="descripition text"
                 android:textColor="#000" />
 
@@ -112,14 +64,13 @@
                 style="@style/TextViewStyled_Titles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="القياسات"
+                android:text="sizes"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 tools:layout_editor_absoluteY="435dp">
 
 
@@ -137,7 +88,6 @@
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
@@ -166,7 +116,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
@@ -212,16 +161,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aljazeera"
-                android:text="الملاحظات"
+                android:text="notes"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/some_notes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:layout_margin="3dp"
-                android:gravity="end"
+                android:layout_marginStart="20dp"
                 android:paddingRight="20dp"
                 android:text="some notes"
                 android:textColor="#000" />
@@ -242,12 +190,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/aljazeera"
-                    android:text="إضافة إلى السلة"
+                    android:text="add to cart"
                     android:textColor="#fff"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -261,7 +208,6 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
