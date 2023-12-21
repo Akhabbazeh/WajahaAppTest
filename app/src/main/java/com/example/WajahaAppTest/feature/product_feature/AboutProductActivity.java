@@ -1,8 +1,6 @@
 package com.example.WajahaAppTest.feature.product_feature;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -10,7 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.WajahaAppTest.R;
-import com.example.WajahaAppTest.http.RequestBuilder;
+import com.example.WajahaAppTest.model.Products;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +16,7 @@ import java.util.List;
 public class AboutProductActivity extends AppCompatActivity {
 
  private    TextView some_notes;
-  private   ProductsViewModel productsViewModel ;
+  //private   ProductsViewModel productsViewModel ;
   private   TextView descripition_text;
   private   ViewPager mViewPager;
     private List<Products> About_productsData;
@@ -41,20 +39,20 @@ public class AboutProductActivity extends AppCompatActivity {
         Intent intent = getIntent();
         product_num = intent.getIntExtra("product_num", 0);
 
-        productsViewModel= ViewModelProviders.of(this).get(ProductsViewModel.class);
-        productsViewModel.getProductsModel();
-        productsViewModel.mutableLiveDataProducts.observe(this, new Observer<List<Products>>() {
-            @Override
-            public void onChanged(List<Products> products) {
-                descripition_text.setText(products.get(product_num).getDescription());
-
-                for (int i=0;i<products.get(product_num).getImages().size();i++){
-                    images.add(products.get(product_num).getImages().get(i).getUrl());
-                }
-                mViewPagerAdapter = new ViewPageAdapterCartShopping(AboutProductActivity.this, images);
-                mViewPager.setAdapter(mViewPagerAdapter);
-            }
-        });
+//        productsViewModel= ViewModelProviders.of(this).get(ProductsViewModel.class);
+//        productsViewModel.getProductsModel();
+//        productsViewModel.mutableLiveDataProducts.observe(this, new Observer<List<Products>>() {
+//            @Override
+//            public void onChanged(List<Products> products) {
+//                descripition_text.setText(products.get(product_num).getDescription());
+//
+//                for (int i=0;i<products.get(product_num).getImages().size();i++){
+//                    images.add(products.get(product_num).getImages().get(i).getUrl());
+//                }
+//                mViewPagerAdapter = new ViewPageAdapterCartShopping(AboutProductActivity.this, images);
+//                mViewPager.setAdapter(mViewPagerAdapter);
+//            }
+//        });
 
 
 

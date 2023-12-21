@@ -1,12 +1,12 @@
-package com.example.WajahaAppTest.ui;
+package com.example.WajahaAppTest;
 
 import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class MyApplication extends Application {
-
+public class MyApplication extends Application
+{
     private static MyApplication instance;
 
     @Override
@@ -33,5 +33,6 @@ public class MyApplication extends Application {
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         return activeNetwork != null &&
                 activeNetwork.isConnectedOrConnecting();
+
     }
 }

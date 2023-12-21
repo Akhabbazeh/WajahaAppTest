@@ -1,4 +1,4 @@
-package com.example.WajahaAppTest.feature.product_feature;
+package com.example.WajahaAppTest.model;
 
 import com.google.gson.annotations.SerializedName;
 
