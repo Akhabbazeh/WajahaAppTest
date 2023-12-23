@@ -15,7 +15,7 @@ import com.example.WajahaAppTest.model.Products;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductFragment extends Fragment implements ProductUiInterface{
+public class ProductFragment extends Fragment implements ProductUiInterface  {
 
 
     private View view;
@@ -79,7 +79,7 @@ public class ProductFragment extends Fragment implements ProductUiInterface{
     @Override
     public void showProduct(List<Products> products) {
         this.products.clear();
-       // this.products.addAll(products);
+        this.products.addAll(products);
         recycleViewAdapterProducts.notifyDataSetChanged();
 
     }

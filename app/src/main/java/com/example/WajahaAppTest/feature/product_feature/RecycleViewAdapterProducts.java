@@ -33,9 +33,6 @@ public class RecycleViewAdapterProducts extends  RecyclerView.Adapter<RecycleVie
         this.context = context;
     }
 
-    public void setProducts_datA(List<Products> products_datA) {
-        this.products_datA = products_datA;
-    }
 
     @NonNull
     @Override
@@ -73,8 +70,7 @@ public class RecycleViewAdapterProducts extends  RecyclerView.Adapter<RecycleVie
 
     @Override
     public int getItemCount() {
-        return 0;
-//                products_datA.size();
+        return products_datA.size();
     }
 
 

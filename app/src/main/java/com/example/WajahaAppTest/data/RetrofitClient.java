@@ -1,5 +1,6 @@
 package com.example.WajahaAppTest.data;
 
+import android.content.Context;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -82,17 +83,16 @@ public class RetrofitClient
         {
             return new OkHttpClient.Builder()
                     .cache(cache())
-                   // .authenticator(tokenAuthenticator()) //used when the response is 401 'unauthorised'
-//                    .addInterceptor(httpLoggingInterceptor()) // used if network off OR on
-//                    .addNetworkInterceptor(networkInterceptor()) // only used when network is on
+ //                   .authenticator(tokenAuthenticator()) //used when the response is 401 'unauthorised'
+                    .addInterceptor(httpLoggingInterceptor()) // used if network off OR on
+                    .addNetworkInterceptor(networkInterceptor()) // only used when network is on
                     .addInterceptor(offlineInterceptor())
                     .build();
         }
 
         private static Cache cache()
         {
-            return
-            new Cache(new File(MyApplication.getInstance().getCacheDir(),"someIdentifier"), cacheSize);
+            return new Cache(new File(MyApplication.getInstance().getCacheDir(),"someIdentifier"), cacheSize);
         }
 
         /**
@@ -173,6 +173,8 @@ public class RetrofitClient
             httpLoggingInterceptor.setLevel( HttpLoggingInterceptor.Level.BODY);
             return httpLoggingInterceptor;
         }
+
+
 
 //        private static Authenticator tokenAuthenticator()
 //        {
